@@ -1,0 +1,26 @@
+name: Test contact form
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: node:12-alpine
+      # this will be used by the Ghost Inspector container
+      options: --network-alias node-app
+    steps:
+      - uses: actions/checkout@v2
+      - name: install, build, and run app
+        run: |
+          npm install
+          npm run start &
+      - name: execute Ghost Inspector suite
+        uses: docker://ghostinspector/cli
+        with:
+          args: test execute-on-demand ${{ secrets.GI_ORGANIZATION_ID }} ./ \
+            --apiKey ${{ secrets.GI_API_KEY }} \
+            --ngrokTunnel node-app:3000 \
+            --ngrokUrlVariable startUrl \
+            --ngrokToken ${{ secrets.NGROK_TOKEN }} \
+            --errorOnFail

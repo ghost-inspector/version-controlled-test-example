@@ -1,0 +1,49 @@
+{
+  "_id": "61cb90e3ba9eca5b80081a51",
+  "name": "Test contact form",
+  "steps": [
+    {
+      "command": "click",
+      "target": [
+        { "selector": "//a[contains(text(), \"Contact\")]" },
+        { "selector": "a[href=\"#contact\"]" }
+      ]
+    },
+    {
+      "command": "click",
+      "target": "#name"
+    },
+    {
+      "command": "assign",
+      "target": "#name",
+      "value": "Hanne Filaro"
+    },
+    {
+      "command": "assign",
+      "target": "#email",
+      "value": "hello@hanne-filaro.com"
+    },
+    {
+      "command": "assign",
+      "target": "#phone",
+      "value": "1235467890"
+    },
+    {
+      "command": "assign",
+      "target": "#message",
+      "value": "Hey there!"
+    },
+    {
+      "command": "click",
+      "target": [
+        { "selector": "//button[contains(text(), \"Send\")]" },
+        { "selector": "#submitButton" }
+      ]
+    },
+    {
+      "command": "assertTextPresent",
+      "target": ".fw-bolder",
+      "value": "Form submission successful!"
+    }
+  ]
+}
