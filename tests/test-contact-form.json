@@ -42,7 +42,7 @@
     },
     {
       "command": "assertTextPresent",
-      "target": ".fw-bolder",
+      "target": "#submitSuccessMessage",
       "value": "Form submission successful!"
     }
   ]
