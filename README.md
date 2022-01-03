@@ -1,5 +1,7 @@
 ## Version-controlled test example
 
+![Test status](https://api.ghostinspector.com/v1/tests/61cb90e3ba9eca5b80081a51/status-badge)
+
 This project demonstrates a simple website app and executing an on-demand test from a branch. The code changes are visible in [pull request #1](https://github.com/ghost-inspector/version-controlled-test-example/pull/1). The Github Actions configuration to execute the on-demand test [is in the workflow](.github/workflows/test-contact-form.yml).
 
 #### Run the site locally:
@@ -28,4 +30,4 @@ ghost-inspector test execute-on-demand $myOrganizationId ./tests/test-contact-fo
 
 ### Start Bootstrap theme copyright notice
 
-Grayscale Bootstrap theme copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE) license.
+Freelancer Bootstrap theme copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE) license.
